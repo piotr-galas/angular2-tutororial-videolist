@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<video-list 
+	[videos]="videos" 
+	(selectVideo) = "onSelectVideo($event)">
+</video-list>
+
+<video-details
+	*ngIf="selectedVideo"
+	[video]="selectedVideo"
+	(closeForm)="onCloseForm()"
+>
+</video-details>
+
+<button type="button"
+				class="btn btn-default"
+				(click)="onNewVideo()"
+>new</button>
